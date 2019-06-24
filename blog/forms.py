@@ -1,5 +1,5 @@
 from django import forms
-from .models import Blog, Image
+from .models import Blog
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 class BlogForm(forms.ModelForm):
@@ -7,8 +7,3 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
         fields = ('title', 'content', 'status',)
-
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model = Image
-        fields = ('image',)

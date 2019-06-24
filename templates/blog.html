@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load hitcount_tags %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -8,5 +9,6 @@
     <h1>{{ blog.title }}</h1>
     <p>{{ blog.author }} {{ blog.updated_on }}</p>
     <p>{{ blog.content|safe }}</p>
+    <p>{{ blog.hit_count.hits }}</p>
   </body>
 </html>
