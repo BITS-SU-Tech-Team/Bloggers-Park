@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="POST" enctype="multipart/form-data">
+      {{ blogForm.media }}
+        {% csrf_token %}
+    {% for hidden in blogForm.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+
+    {% for field in blogForm %}
+        {{ field }} <br />
+    {% endfor %}
+
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form }}
+    {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
