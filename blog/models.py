@@ -22,6 +22,7 @@ class Blog(models.Model, HitCountMixin):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
+    view_time = models.IntegerField(default=0, blank=False)
 
     class Meta:
         ordering = ['-created_on']
